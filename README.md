@@ -19,7 +19,7 @@ Setelah XAMPP terinstal, kita dapat menjalankan web server dengan membuka progra
 Dengan memahami perangkat yang dibutuhkan untuk belajar PHP dan cara menginstalnya, kita dapat mulai menulis kode PHP dan menjalankannya pada web server lokal.
 
 ### 3. Your First PHP Tag
-#### Untuk menampilkan baris kode yang kita ketikkan pada browser, kita dapat menggunakan perintah ``` echo ``` Perintah echo digunakan untuk menampilkan teks atau variabel pada browser. Perintah echo dapat digunakan di dalam tag PHP, atau diluar tag PHP. Contoh perintah echo yang digunakan di dalam tag PHP adalah sebagai berikut.
+#### PHP diawali dengan ``` <?php ``` dan diakhiri dengan ```?>``` Untuk menampilkan baris kode yang kita ketikkan pada browser, kita dapat menggunakan perintah ``` echo ``` Perintah echo digunakan untuk menampilkan teks atau variabel pada browser. Perintah echo dapat digunakan di dalam tag PHP, atau diluar tag PHP. Contoh perintah echo yang digunakan di dalam tag PHP adalah sebagai berikut.
 ```
 <?php
   echo 'Hello World';
