@@ -151,7 +151,7 @@ ul>
 </ul>
 ```
 #### Hasil dari kode di atas adalah sebagai berikut.
-![image](
+![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/asscArray2.PNG)
 ### 8. Functions And Filtering
 ### 9. Lambda Functions
 ### 10. Separate PHP Logic From the Template
