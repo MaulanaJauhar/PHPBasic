@@ -22,9 +22,15 @@ Dengan memahami perangkat yang dibutuhkan untuk belajar PHP dan cara menginstaln
 #### PHP diawali dengan ``` <?php ``` dan diakhiri dengan ```?>``` Untuk menampilkan baris kode yang kita ketikkan pada browser, kita dapat menggunakan perintah ``` echo ``` Perintah echo digunakan untuk menampilkan teks atau variabel pada browser. Perintah echo dapat digunakan di dalam tag PHP, atau diluar tag PHP. Contoh perintah echo yang digunakan di dalam tag PHP adalah sebagai berikut.
 ```
 <?php
-  echo 'Hello, World';
+  echo "Hello, World";
 ?>
 ```
+##### Penjelasan :
+1. Tag PHP diawali dengan ```<?php``` dan diakhiri dengan ```?>```
+2. Perintah ```echo``` digunakan untuk menampilkan ```"Hello, World"``` pada browser
+3. Perintah ```echo``` dapat digunakan di dalam tag PHP, atau diluar tag PHP
+4. Tanda ```;``` digunakan untuk menandai akhir dari perintah
+
 ### 4. Variables
 #### Variabel adalah tempat untuk menyimpan data. Variabel dapat berisi teks, angka, atau nilai lainnya. Variabel diawali dengan tanda ```$``` dan diikuti dengan nama variabel. Nama variabel dapat berupa huruf, angka, atau garis bawah. Nama variabel bersifat case-sensitive, artinya ```$name``` dan ```$Name``` adalah dua variabel yang berbeda. Contoh kode untuk mendeklarasikan variabel adalah sebagai berikut.
 ```
@@ -33,19 +39,23 @@ Dengan memahami perangkat yang dibutuhkan untuk belajar PHP dan cara menginstaln
 $greeting = "Hello";
 
 // Pemanggilan dalam echo, dipisahkan oleh ' . ' jika terdapat tambahan argumen, misalnya string atau variabel lain (concate)
-echo $greeting . " Everybody!";
+echo $greeting . "Everybody!";
 
-// Variabel juga dapat dipanggil di didalam string, NAMUN HARUS DI DALAM PETIK DUA " "
+//Untuk menambahkan spasi diantara kata dan variabel dapat menggunakan
+echo $greeting . " Everybody!";
+atau bisa juga dengan
+echo $greeting . " " . "Everybody!";
+
+// Variabel juga dapat dipanggil di didalam string
 echo "$greeting Everybody!"; // Output sama dengan di atas
 ?>
 ```
 #### Terkadang variabel akan merujuk ke hal-hal yang tidak dapat kita kendalikan ,mungkin merujuk pada sesuatu yang diinput oleh pengguna di dalamnya ,mungkin merujuk pada data yang berasal dari database
 
 ### 5. Conditionals and Boolean
-#### Conditional merupakan salah satu ekspresi dalam pemrograman yang menghasilkan nilai *true / false*. Jika kondisi tersebut bernilai *true* maka sistem menjalankan statement di dalam if statement namun jika kondisi tersebut bernilai *false* maka sistem tidak menjalankan statement tersebut. 
+#### Conditional merupakan salah satu ekspresi dalam pemrograman yang menghasilkan dua nilai yaitu *Trua/False*. Jika kondisi tersebut bernilai *true* maka sistem menjalankan statement di dalam if statement namun jika kondisi tersebut bernilai *false* maka sistem tidak menjalankan statement tersebut. 
 #### Terdapat sebuah tipe data yang hanya memiliki nilai  kembalian *true / false*, yaitu boolean. Nilai boolean memiliki default *false*
 #### Contoh kode untuk membuat conditional adalah sebagai berikut.
-#### Dalam tag PHP :
 ```
 <?php
   $name = "Dark Matter";
@@ -58,9 +68,7 @@ echo "$greeting Everybody!"; // Output sama dengan di atas
     $message = "You have not read $name"; // Mengembalikan nilai false
   }
 ?>
-```
-#### Dalam HTML :
-```
+
 //Menggunakan echo untuk menampilkan nilai dari variabel $message
 <h1>
   <?php echo $message; ?>
@@ -72,7 +80,11 @@ echo "$greeting Everybody!"; // Output sama dengan di atas
 ```
 #### Hasil dari kode di atas adalah sebagai berikut.
 ![image](https://github.com/MaulanaJauhar/PHPBasic/blob/8c365a6fe7c776ea02cc46b7f8dab1d3131a4206/variable.PNG)
+
 ### 6. Arrays
+#### Array adalah kumpulan data yang memiliki index. Index adalah angka yang dimulai dari 0. Contoh kode untuk membuat array adalah sebagai berikut.
+```
+```
 ### 7. Associative Arrays
 ### 8. Functions And Filtering
 ### 9. Lambda Functions
