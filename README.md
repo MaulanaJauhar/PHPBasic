@@ -1,7 +1,7 @@
 # PHP Basic
 #### Source : Youtube [Laracast](https://www.youtube.com/playlist?list=PL3VM-unCzF8ipG50KDjnzhugceoSG3RTC)
 
-### 1. How to Choose A First =Programming Language=
+### 1. How to Choose A First Programming Language
 #### Dalam Memilih bahasa pemrograman, harus sesuai dengan tujuan apa yang kita miliki saat ingin belajar bahasa tersebut. Contohnya apabila kita ingin membuat situs web, kita bisa belajar bahasa pemrograman seperti HTML, CSS, dan JS. Jika kita ingin membuat aplikasi desktop, kita mungkin bisa memilih bahasa seperti Python, C++, atau Java. Jika kita benar benar baru belajar tentang bahasa pemrograman, mungkin dapat diawali dengan memilih bahasa yang lebih mudah seperti Python atau Ruby. Jika kita ingin menjadi seorang pengembang Game, kita bisa memilih bahasa C++ atau C, dan apa bila kita ingin fokus pada pengembangan Web, kita bisa memilih bahasa JavaScript atau PHP.
 #### PHP adalah bahasa pemrograman server-side yang dirancang untuk pengembangan web. PHP digunakan untuk menghasilkan konten dinamis pada website, seperti halaman web yang mengambil data dari database, membuat dan mengirim email, mengolah formulir, dan masih banyak lagi. PHP juga dapat digunakan untuk membuat aplikasi web yang lebih besar dan kompleks. PHP umumnya digunakan dengan teknologi web seperti Apache, MySQL, dan HTML. Saat ini, PHP terus berkembang dan ditingkatkan oleh komunitas pengembang web, dan menjadi salah satu bahasa pemrograman web yang paling populer dan mudah digunakan.
 
