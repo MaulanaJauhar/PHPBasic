@@ -29,10 +29,11 @@
     ?>
 
     <h1>
-        //Opsi 1. Menggunakan echo
-            <?php echo $message; ?>
-        //Opsi 2. Menggunakan short echo
-            <?= $message; ?>
+        <!-- //Opsi 1. Menggunakan echo -->
+        <?php echo $message; ?>
+        <br>
+        <!-- //Opsi 2. Menggunakan short echo -->
+        <?= $message; ?>
     </h1>
 </body>
 </html>
