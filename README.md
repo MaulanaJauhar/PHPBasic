@@ -120,6 +120,38 @@ $books = [
 ```
 #### Hasil dari kode di atas adalah sebagai berikut.
 ![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/asscArray1.PNG)
+
+#### Dan apabila terdapat perubahan pada data di dalam array kita dapat menggunakan Associative Array untuk mengakses data tersebut. Contoh kode array asosiatif adalah sebagai berikut.
+```
+<?php
+  $books = [
+    [
+      'name'          => "Do Andorids Dream of Electric Sheep",
+      'author'        => "Philip K. Dick",
+      'purchase_url'  => "http://example.com"
+    ],
+    [
+      'name'          => "Project Hail Mary",
+      'author'        => "Andy Weir",
+      'purchase_url'  => "http://example.com"
+    ]
+  ];
+?>
+```
+#### Untuk dapat mengakses data yang ada pada array tersebut, kita dapat menggunakan perulangan lagi, contoh disini akan menggunakan *foreach*.
+```
+ul>
+  <?php foreach ($books as $book) : ?>
+    <li>
+      <h2><?= $book['name']; ?></h2>
+      <p>By <?= $book['author']; ?></p>
+      <p><a href="<?= $book['purchase_url']; ?>">Purchase</a></p>
+    </li>
+  <?php endforeach; ?>
+</ul>
+```
+#### Hasil dari kode di atas adalah sebagai berikut.
+![image](
 ### 8. Functions And Filtering
 ### 9. Lambda Functions
 ### 10. Separate PHP Logic From the Template
