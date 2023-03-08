@@ -70,6 +70,8 @@ echo "$greeting Everybody!"; // Output sama dengan di atas
   <?= $message; ?>
 </h1>
 ```
+#### Hasil dari kode di atas adalah sebagai berikut.
+![image](https://github.com/MaulanaJauhar/PHPBasic/blob/8c365a6fe7c776ea02cc46b7f8dab1d3131a4206/variable.PNG)
 ### 6. Arrays
 ### 7. Associative Arrays
 ### 8. Functions And Filtering
