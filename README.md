@@ -103,7 +103,23 @@ $books = [
 ```
 #### Hasil dari kode di atas adalah sebagai berikut.
 ![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/array.PNG)
+
 ### 7. Associative Arrays
+#### Array asosiatif adalah jenis array yang memungkinkan penggunaan indeks yang ditentukan sendiri, yang biasanya diberikan nama kunci atau label (key). Ini berbeda dengan array numerik biasa yang menggunakan indeks numerik. Dalam PHP, array asosiatif direpresentasikan dengan kurung kurawal { } dan menggunakan tanda panah (=>) untuk menghubungkan kunci dengan nilainya. Contoh kode array asosiatif adalah sebagai berikut.
+```
+<?php 
+  $books = [
+    "Do Andorids Dream of Electric Sheep",
+    "The Langoliers",
+    "Hail Mary"
+  ];
+?>
+<p>
+  <?php echo $books[1]; ?>
+</p>
+```
+#### Hasil dari kode di atas adalah sebagai berikut.
+![image](
 ### 8. Functions And Filtering
 ### 9. Lambda Functions
 ### 10. Separate PHP Logic From the Template
