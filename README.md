@@ -26,7 +26,7 @@ Dengan memahami perangkat yang dibutuhkan untuk belajar PHP dan cara menginstaln
 ?>
 ```
 ### 4. Variables
-#### Variabel adalah tempat untuk menyimpan data. Variabel dapat berisi teks, angka, atau nilai lainnya. Variabel diawali dengan tanda ```$``` dan diikuti dengan nama variabel. Nama variabel dapat berupa huruf, angka, atau garis bawah. Nama variabel tidak boleh diawali dengan angka. Nama variabel bersifat case-sensitive, artinya ```$name``` dan ```$Name``` adalah dua variabel yang berbeda. Contoh kode untuk mendeklarasikan variabel adalah sebagai berikut.
+#### Variabel adalah tempat untuk menyimpan data. Variabel dapat berisi teks, angka, atau nilai lainnya. Variabel diawali dengan tanda ```$``` dan diikuti dengan nama variabel. Nama variabel dapat berupa huruf, angka, atau garis bawah. Nama variabel bersifat case-sensitive, artinya ```$name``` dan ```$Name``` adalah dua variabel yang berbeda. Contoh kode untuk mendeklarasikan variabel adalah sebagai berikut.
 ```
 <?php
   // Variabel $greeting dengan value "Hello"
@@ -39,7 +39,37 @@ echo $greeting . " Everybody!";
 echo "$greeting Everybody!"; // Output sama dengan di atas
 ?>
 ```
+#### Terkadang variabel akan merujuk ke hal-hal yang tidak dapat kita kendalikan ,mungkin merujuk pada sesuatu yang diinput oleh pengguna di dalamnya ,mungkin merujuk pada data yang berasal dari database
+
 ### 5. Conditionals and Boolean
+#### Conditional merupakan salah satu ekspresi dalam pemrograman yang menghasilkan nilai *true / false*. Jika kondisi tersebut bernilai *true* maka sistem menjalankan statement di dalam if statement namun jika kondisi tersebut bernilai *false* maka sistem tidak menjalankan statement tersebut. 
+#### Terdapat sebuah tipe data yang hanya memiliki nilai  kembalian *true / false*, yaitu boolean. Nilai boolean memiliki default *false*
+#### Contoh kode untuk membuat conditional adalah sebagai berikut.
+#### Dalam tag PHP :
+```
+<?php
+  $name = "Dark Matter";
+  $read = true;
+
+  //Conditional (if-else)
+  if ($read) {
+    $message = "You have read $name"; // Mengembalikan nilai true
+  } else {
+    $message = "You have not read $name"; // Mengembalikan nilai false
+  }
+?>
+```
+#### Dalam HTML :
+```
+//Menggunakan echo untuk menampilkan nilai dari variabel $message
+<h1>
+  <?php echo $message; ?>
+</h1>
+//Atau bisa juga menggunakan <?= ?> untuk menampilkan nilai dari variabel $message
+<h1>
+  <?= $message; ?>
+</h1>
+```
 ### 6. Arrays
 ### 7. Associative Arrays
 ### 8. Functions And Filtering
