@@ -26,6 +26,19 @@ Dengan memahami perangkat yang dibutuhkan untuk belajar PHP dan cara menginstaln
 ?>
 ```
 ### 4. Variables
+#### Variabel adalah tempat untuk menyimpan data. Variabel dapat berisi teks, angka, atau nilai lainnya. Variabel diawali dengan tanda ```$``` dan diikuti dengan nama variabel. Nama variabel dapat berupa huruf, angka, atau garis bawah. Nama variabel tidak boleh diawali dengan angka. Nama variabel bersifat case-sensitive, artinya ```$name``` dan ```$Name``` adalah dua variabel yang berbeda. Contoh kode untuk mendeklarasikan variabel adalah sebagai berikut.
+```
+<?php
+  // Variabel $greeting dengan value "Hello"
+$greeting = "Hello";
+
+// Pemanggilan dalam echo, dipisahkan oleh ' . ' jika terdapat tambahan argumen, misalnya string atau variabel lain (concate)
+echo $greeting . " Everybody!";
+
+// Variabel juga dapat dipanggil di didalam string, NAMUN HARUS DI DALAM PETIK DUA " "
+echo "$greeting Everybody!"; // Output sama dengan di atas
+?>
+```
 ### 5. Conditionals and Boolean
 ### 6. Arrays
 ### 7. Associative Arrays
