@@ -8,13 +8,13 @@
 ### 2. Tools of the Trade
 Materi yang dibahas adalah tentang perangkat yang dibutuhkan untuk memulai belajar PHP dan cara menginstalnya.
 - Text editor
-  Text editor adalah program yang digunakan untuk menulis kode PHP. Ada banyak text editor yang dapat digunakan untuk menulis kode PHP, seperti Sublime Text, Notepad++, Visual Studio Code, dan lain-lain.
+  adalah program yang digunakan untuk menulis kode PHP. Ada banyak text editor yang dapat digunakan untuk menulis kode PHP, seperti Sublime Text, Notepad++, Visual Studio Code, dan lain-lain.
 - Web server
-  Web server adalah program yang digunakan untuk menjalankan kode PHP. Beberapa web server yang dapat digunakan untuk menjalankan kode PHP adalah Apache, Nginx, IIS, dan lain-lain.
+  adalah program yang digunakan untuk menjalankan kode PHP. Beberapa web server yang dapat digunakan untuk menjalankan kode PHP adalah Apache, Nginx, IIS, dan lain-lain.
 - PHP
-  PHP adalah bahasa pemrograman yang digunakan untuk membuat website dinamis. PHP dapat diinstal secara mandiri atau sebagai bagian dari paket software seperti XAMPP atau WAMP.
+  adalah bahasa pemrograman yang digunakan untuk membuat website dinamis. PHP dapat diinstal secara mandiri atau sebagai bagian dari paket software seperti XAMPP atau WAMP.
 - Menginstal XAMPP
-  XAMPP adalah paket software yang berisi Apache, MySQL, dan PHP yang dapat diinstal dengan mudah.
+  adalah paket software yang berisi Apache, MySQL, dan PHP yang dapat diinstal dengan mudah.
 Setelah XAMPP terinstal, kita dapat menjalankan web server dengan membuka program XAMPP Control Panel dan menekan tombol "Start" pada Apache dan MySQL.
 Dengan memahami perangkat yang dibutuhkan untuk belajar PHP dan cara menginstalnya, kita dapat mulai menulis kode PHP dan menjalankannya pada web server lokal.
 
@@ -22,7 +22,7 @@ Dengan memahami perangkat yang dibutuhkan untuk belajar PHP dan cara menginstaln
 #### PHP diawali dengan ``` <?php ``` dan diakhiri dengan ```?>``` Untuk menampilkan baris kode yang kita ketikkan pada browser, kita dapat menggunakan perintah ``` echo ``` Perintah echo digunakan untuk menampilkan teks atau variabel pada browser. Perintah echo dapat digunakan di dalam tag PHP, atau diluar tag PHP. Contoh perintah echo yang digunakan di dalam tag PHP adalah sebagai berikut.
 ```
 <?php
-  echo 'Hello World';
+  echo 'Hello, World';
 ?>
 ```
 ### 4. Variables
