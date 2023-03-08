@@ -82,9 +82,27 @@ echo "$greeting Everybody!"; // Output sama dengan di atas
 ![image](https://github.com/MaulanaJauhar/PHPBasic/blob/8c365a6fe7c776ea02cc46b7f8dab1d3131a4206/variable.PNG)
 
 ### 6. Arrays
-#### Array adalah kumpulan data yang memiliki index. Index adalah angka yang dimulai dari 0. Contoh kode untuk membuat array adalah sebagai berikut.
+#### Array adalah kumpulan data yang memiliki index. Index adalah angka yang dimulai dari 0. Array dapat menyimpan satu atau lebih nilai. Array dapat menyimpan berbagai jenis data, termasuk teks, angka, dan boolean.Contoh kode array adalah sebagai berikut.
 ```
+<?php
+$books = [
+  "Do Androids Dream of Electric Sheep",
+  "The Langoliers",
+  "Hail Mary"];
+?>
 ```
+#### Untuk mengakses data pada array dapat digunakan ekspresi perulangan(*loop*) di dalam tag html, misalnya *for, foreach, while,* atau *do-while*. Contoh menggunakan *foreach* :
+```
+ <ul>
+    <?php foreach ($books as $book) : ?>
+      <li>
+        <?= $book; ?>
+      </li>
+    <?php endforeach; ?>
+  </ul>
+```
+#### Hasil dari kode di atas adalah sebagai berikut.
+![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/array.PNG)
 ### 7. Associative Arrays
 ### 8. Functions And Filtering
 ### 9. Lambda Functions
