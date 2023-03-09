@@ -388,6 +388,7 @@ $filteredBooks = array_filter($books, function ($book) {
 </ul>
 ```
 ### 10. Separate PHP Logic From the Template
+#### 
 ### 11. Technical Check-In
 ### 12. Page Links
 ### 13. Partials
