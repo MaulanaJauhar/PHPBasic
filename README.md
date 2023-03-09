@@ -164,21 +164,21 @@ ul>
             [
               'name'          => "Do Andorids Dream of Electric Sheep",
               'author'        => "Philip K. Dick",
-              'realiseYear'   => 1968,
+              'releaseYear'   => 1968,
               'purchase_url'  => "http://example.com"
             ],
             [
               'name'          => "Project Hail Mary",
               'author'        => "Andy Weir",
-              'realiseYear'   => 2021,
+              'releaseYear'   => 2021,
               'purchase_url'  => "http://example.com"
             ],
             [
-                'name'          => "The Martisan",
-                'author'        => "Andy Weir",
-                'realiseYear'   => 2011,
-                'purchase_url'  => "http://example.com"
-              ]
+              'name'          => "The Martisan",
+              'author'        => "Andy Weir",
+              'releaseYear'   => 2011,
+              'purchase_url'  => "http://example.com"
+            ]
           ];
     ?>
 ```
@@ -190,7 +190,7 @@ ul>
     <?php if ($book['author'] === 'Andy Weir') :?>
       <li>
         <a href="<?= $book['purchase_url'] ?>">
-          <?= $book['name'] ?> (<?= $book['realiseYear'] ?>) - By <?= $book['author'] ?>
+          <?= $book['name'] ?> (<?= $book['releaseYear'] ?>) - By <?= $book['author'] ?>
         </a>
       </li>
     <?php endif; ?>
@@ -238,7 +238,7 @@ function filterByAuthor($books){
   <?php foreach (filterByAuthor($books) as $book) :?>
     <li>
       <a href="<?= $book['purchase_url'] ?>">
-        <?= $book['name'] ?> (<?= $book['realiseYear'] ?>) - By <?= $book['author'] ?>
+        <?= $book['name'] ?> (<?= $book['releaseYear'] ?>) - By <?= $book['author'] ?>
       </a>
     </li>
   <?php endforeach; ?>
@@ -259,7 +259,7 @@ function filterByAuthor($books, $author){
   <?php foreach (filterByAuthor($books, 'Andy Weir') as $book) :?>
     <li>
       <a href="<?= $book['purchase_url'] ?>">
-        <?= $book['name'] ?> (<?= $book['realiseYear'] ?>) - By <?= $book['author'] ?>
+        <?= $book['name'] ?> (<?= $book['releaseYear'] ?>) - By <?= $book['author'] ?>
       </a>
     </li>
   <?php endforeach; ?>
@@ -269,7 +269,124 @@ function filterByAuthor($books, $author){
 ![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/filtering%26function.PNG)
 
 ### 9. Lambda Functions
+#### Function dapat digunakan untuk menfilter buku berdasarkan ```author``` tetapi jika kita ingin menambahkan opsi filter lagi, kita harus membuat function baru. Sehingga kita bisa menggunakan *lambda function* untuk membuat function yang lebih dinamis. Function yang dibuat sebelumnya juga dapat dimasukkan ke dalam sebuah variabel yang dinamakan *extract variable*
+#### Contoh :
+```php
+<?php
+$filteredBooks = filterByAuthor($books, 'Andy Weir');
+?>
+<ul>
+  <?php foreach ($filteredBooks as $book) :?>
+    <li>
+      <a href="<?= $book['purchase_url'] ?>">
+        <?= $book['name'] ?> (<?= $book['releaseYear'] ?>) - By <?= $book['author'] ?>
+      </a>
+    </li>
+  <?php endforeach; ?>
+</ul>
+```
+#### Function juga dapat dibuat dan disimpan dalam variabel. Hal ini dinamakan **Lambda Function / Anonymous Function**. 
+```php
+//Membuat Variabel yang Berisikan Function
+<?php
+  $filterByAuthor = function ($books, $author) {
+    $filtered = [];
+    foreach ($books as $book) {
+        if ($book['author'] === $author) {
+            $filtered[] = $book;
+        }
+    }
+    return $filtered;
+  };
+  $filtered = $filterByAuthor($books, 'Andy Weir');
+?>
 
+//Memanggil dalam Tag HTML
+<ul>
+  <?php foreach ($filtered as $book) :?>
+    <li>
+      <a href="<?= $book['purchase_url'] ?>">
+        <?= $book['name'] ?> (<?= $book['releaseYear'] ?>) - By <?= $book['author'] ?>
+      </a>
+    </li>
+  <?php endforeach; ?>
+</ul>
+```
+#### Function sebelumnya dapat disederhanakan dengan menggunakan *refactoring* dengan cara menambahkan parameter function sesuai dengan *key* dan *value* yang akan difilter.
+```php
+<?php
+  function filter($items, $key, $value) {
+    $filteredItems = [];
+    foreach ($items as $item) {
+        if ($item[$key] === $value) {
+            $filteredItems[] = $item;
+        }
+    }
+    return $filteredItems;
+  };
+  $filteredBooks = filter($books, 'releaseYear', 2011);
+?>
+
+<ul>
+  <?php foreach ($filteredBooks as $book) :?>
+    <li>
+      <a href="<?= $book['purchase_url'] ?>">
+        <?= $book['name'] ?> (<?= $book['releaseYear'] ?>) - By <?= $book['author'] ?>
+      </a>
+    </li>
+  <?php endforeach; ?>
+</ul>
+```
+#### *Refactoring* juga dapat diimplementasikan jika menginginkan *value* yang lebih fleksibel, misalnya terdapat data dengan tipe data integer dan ingin ditampilkan data yang <= dari value tersebut, maka kita dapat memisahkan pengkondisian *if* ke dalam sebuah function, sehingga menjadi :
+```php
+<?php
+function filter($items, $function){
+        $filteredItems = [];
+        foreach ($items as $item) {
+            if ($function($item)) {
+                $filteredItems[] = $item;
+            }
+        }
+        return $filteredItems;
+    }
+    
+    // Filter buku dengan tahun rilis < 2000
+
+    $filteredBooks = filter($books, function($book){
+        return $book['releaseYear'] < 2000;
+    });
+    ?>
+   
+   // Menampilkan buku dengan tahun rilis < 2000
+    <ul>
+        <?php foreach ($filteredBooks as $book) : ?>
+            <li>
+                <a href="<?= $book['purchase_url'] ?>">
+                    <?= $book['name']; ?> (<?= $book['releaseYear'] ?>) - By <?= $book['author'] ?>
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+```
+#### Untuk melakukan filtering seperti diatas, PHP sudah menyediakan built-in function, sehingga tidak perlu membuat secara manual, yaitu ```array_filter()``` :
+```php
+// Built-in function untuk filtering array
+$filteredBooks = array_filter($books, function ($book) {
+    return $book['releaseYear'] > 2000;
+});
+?>
+
+<!-- Menampilkan buku berdasarkan filter -->
+<ul>
+    <?php foreach ($filteredBooks as $book) : ?>
+        <li>
+            <a href="<?= $book['purchase_url'] ?>">
+                <?= $book['name']; ?> (<?= $book['releaseYear'] ?>) - By <?= $book['author'] ?>
+            </a>
+        </li>
+    <?php endforeach; ?>
+</ul>
+```
 ### 10. Separate PHP Logic From the Template
 ### 11. Technical Check-In
 ### 12. Page Links
