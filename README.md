@@ -196,6 +196,8 @@ ul>
   <?php endforeach; ?>
 </ul>
 ```
+#### Hasil dari kode di atas adalah sebagai berikut.
+![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/filtering.PNG)
 ### 9. Lambda Functions
 ### 10. Separate PHP Logic From the Template
 ### 11. Technical Check-In
