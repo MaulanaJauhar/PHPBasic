@@ -285,7 +285,7 @@ $filteredBooks = filterByAuthor($books, 'Andy Weir');
   <?php endforeach; ?>
 </ul>
 ```
-#### Function juga dapat dibuat dan disimpan dalam variabel. Hal ini dinamakan **Lambda Function / Anonymous Function**. 
+#### Function juga dapat dibuat dan disimpan dalam variabel. Hal ini dinamakan *Lambda Function / Anonymous Function*. 
 ```php
 //Membuat Variabel yang Berisikan Function
 <?php
