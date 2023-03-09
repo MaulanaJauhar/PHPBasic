@@ -154,7 +154,48 @@ ul>
 ![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/asscArray2.PNG)
 
 ### 8. Functions And Filtering
+#### Untuk melakukan filtering diperlukan tanda ```=``` tiga kali untuk mendefinisikan value yang hendak di filter.
+#### Contoh kode programnya adalah sebagai berikut.
+### Nilai Variable : 
+```
+<?php 
+        $books = [
+            [
+              'name'          => "Do Andorids Dream of Electric Sheep",
+              'author'        => "Philip K. Dick",
+              'realiseYear'   => 1968,
+              'purchase_url'  => "http://example.com"
+            ],
+            [
+              'name'          => "Project Hail Mary",
+              'author'        => "Andy Weir",
+              'realiseYear'   => 2021,
+              'purchase_url'  => "http://example.com"
+            ],
+            [
+                'name'          => "The Martisan",
+                'author'        => "Andy Weir",
+                'realiseYear'   => 2011,
+                'purchase_url'  => "http://example.com"
+              ]
+          ];
+    ?>
+```
+### Filter Data
 
+```
+<ul>
+  <?php foreach ($books as $book) :?>
+    <?php if ($book['author'] === 'Andy Weir') :?>
+      <li>
+        <a href="<?= $book['purchase_url'] ?>">
+          <?= $book['name'] ?> (<?= $book['realiseYear'] ?>)
+        </a>
+      </li>
+    <?php endif; ?>
+  <?php endforeach; ?>
+</ul>
+```
 ### 9. Lambda Functions
 ### 10. Separate PHP Logic From the Template
 ### 11. Technical Check-In
