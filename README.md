@@ -20,7 +20,7 @@ Dengan memahami perangkat yang dibutuhkan untuk belajar PHP dan cara menginstaln
 
 ### 3. Your First PHP Tag
 #### PHP diawali dengan ``` <?php ``` dan diakhiri dengan ```?>``` Untuk menampilkan baris kode yang kita ketikkan pada browser, kita dapat menggunakan perintah ``` echo ``` Perintah echo digunakan untuk menampilkan teks atau variabel pada browser. Perintah echo dapat digunakan di dalam tag PHP, atau diluar tag PHP. Contoh perintah echo yang digunakan di dalam tag PHP adalah sebagai berikut.
-```
+```php
 <?php
   echo "Hello, World";
 ?>
@@ -33,7 +33,7 @@ Dengan memahami perangkat yang dibutuhkan untuk belajar PHP dan cara menginstaln
 
 ### 4. Variables
 #### Variabel adalah tempat untuk menyimpan data. Variabel dapat berisi teks, angka, atau nilai lainnya. Variabel diawali dengan tanda ```$``` dan diikuti dengan nama variabel. Nama variabel dapat berupa huruf, angka, atau garis bawah. Nama variabel bersifat case-sensitive, artinya ```$name``` dan ```$Name``` adalah dua variabel yang berbeda. Contoh kode untuk mendeklarasikan variabel adalah sebagai berikut.
-```
+```php
 <?php
   // Variabel $greeting dengan value "Hello"
 $greeting = "Hello";
@@ -56,7 +56,7 @@ echo "$greeting Everybody!"; // Output sama dengan di atas
 #### Conditional merupakan salah satu ekspresi dalam pemrograman yang menghasilkan dua nilai yaitu *Trua/False*. Jika kondisi tersebut bernilai *true* maka sistem menjalankan statement di dalam if statement namun jika kondisi tersebut bernilai *false* maka sistem tidak menjalankan statement tersebut. 
 #### Terdapat sebuah tipe data yang hanya memiliki nilai  kembalian *true / false*, yaitu boolean. Nilai boolean memiliki default *false*
 #### Contoh kode untuk membuat conditional adalah sebagai berikut.
-```
+```php
 <?php
   $name = "Dark Matter";
   $read = true;
@@ -83,7 +83,7 @@ echo "$greeting Everybody!"; // Output sama dengan di atas
 
 ### 6. Arrays
 #### Array adalah kumpulan data yang memiliki index. Index adalah angka yang dimulai dari 0. Array dapat menyimpan satu atau lebih nilai. Array dapat menyimpan berbagai jenis data, termasuk teks, angka, dan boolean.Contoh kode array adalah sebagai berikut.
-```
+```php
 <?php
 $books = [
   "Do Androids Dream of Electric Sheep",
@@ -92,7 +92,7 @@ $books = [
 ?>
 ```
 #### Untuk mengakses data pada array dapat digunakan ekspresi perulangan(*loop*) di dalam tag html, misalnya *for, foreach, while,* atau *do-while*. Contoh menggunakan *foreach* :
-```
+```php
  <ul>
     <?php foreach ($books as $book) : ?>
       <li>
@@ -106,7 +106,7 @@ $books = [
 
 ### 7. Associative Arrays
 #### Array asosiatif adalah jenis array yang memungkinkan penggunaan indeks yang ditentukan sendiri, yang biasanya diberikan nama kunci atau label (key). Ini berbeda dengan array numerik biasa yang menggunakan indeks numerik. Dalam PHP, array asosiatif direpresentasikan dengan kurung kurawal { } dan menggunakan tanda panah (=>) untuk menghubungkan kunci dengan nilainya. Contoh kode array asosiatif adalah sebagai berikut.
-```
+```php
 <?php 
   $books = [
     "Do Andorids Dream of Electric Sheep",
@@ -122,7 +122,7 @@ $books = [
 ![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/asscArray1.PNG)
 
 #### Dan apabila terdapat perubahan pada data di dalam array kita dapat menggunakan Associative Array untuk mengakses data tersebut. Contoh kode array asosiatif adalah sebagai berikut.
-```
+```php
 <?php
   $books = [
     [
@@ -139,7 +139,7 @@ $books = [
 ?>
 ```
 #### Untuk dapat mengakses data yang ada pada array tersebut, kita dapat menggunakan perulangan lagi, contoh disini akan menggunakan *foreach*.
-```
+```php
 ul>
   <?php foreach ($books as $book) : ?>
     <li>
@@ -154,10 +154,11 @@ ul>
 ![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/asscArray2.PNG)
 
 ### 8. Functions And Filtering
-#### Untuk melakukan filtering diperlukan tanda ```=``` tiga kali untuk mendefinisikan value yang hendak di filter.
-#### Contoh kode programnya adalah sebagai berikut.
+#### *Function* dalam pemrograman termasuk PHP adalah sebuah blok kode yang dapat dipanggil atau digunakan berulang kali dalam program. Fungsi biasanya memiliki nama yang unik dan tugas yang spesifik, sehingga memudahkan pengembang untuk menggunakan ulang kode yang sama tanpa perlu menuliskan ulang kode tersebut. *Function* hanya akan dijalankan ketika dipanggil.
+#### Sedangkan *filtering* dalam pemrograman termasuk PHP mengacu pada proses memilih sebagian data dari kumpulan data berdasarkan suatu kriteria tertentu.
+#### Pengkondisian dengan hanya sebuah tanda ```"="``` tidak tepat, karena 1 ```"="``` akan mengubah value dari semua key ```author``` menjadi ```'Andy Weir'``` atau dinamakan *assign value*, sedangkan dibutuhkan filter data untuk menampilkan buku dengan ```author``` ```"Andy Weir"``` saja atau *equal to*, sehingga harus dicek kesamaan atau *equality* dengan 3 tanda ```"="``` atau ```"==="``` Maka kondisi dalam if menjadi :
 ### Nilai Variable : 
-```
+```php
 <?php 
         $books = [
             [
@@ -183,13 +184,13 @@ ul>
 ```
 ### Filter Data
 
-```
+```php
 <ul>
   <?php foreach ($books as $book) :?>
     <?php if ($book['author'] === 'Andy Weir') :?>
       <li>
         <a href="<?= $book['purchase_url'] ?>">
-          <?= $book['name'] ?> (<?= $book['realiseYear'] ?>)
+          <?= $book['name'] ?> (<?= $book['realiseYear'] ?>) - By <?= $book['author'] ?>
         </a>
       </li>
     <?php endif; ?>
@@ -198,6 +199,72 @@ ul>
 ```
 #### Hasil dari kode di atas adalah sebagai berikut.
 ![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/filtering.PNG)
+#### Sedangkan untuk membuat *function* dapat menggunakan kode berikut.
+```php
+//Deklarasi function
+function filterByAuthor(){
+    //Kode
+}
+
+//Untuk melakukan pemanggilan function, cukup dengan memanggil nama functionnya dengan menambahkan tanda kurung ()
+filterByAuthor();
+
+//Menampilkan isi dari function yang sudah dibuat ke dalam browser
+function filterByAuthor(){
+    return "gibberish"; 
+    //Return adalah sebuah keyword yang digunakan untuk mengembalikan nilai dari sebuah function, dapat berupa string, integer, array, object, boolean, dan lain-lain.
+}
+// Contoh
+<p>
+  <?= filterByAuthor($books); ?>
+  //Di browser akan menampilkan "gibberish"
+</p>
+```
+#### Filter Data dengan Function
+```php
+//Kita bisa menambahkan perulanagan foreach di dalam function untuk melakukan filter data
+//Contoh kita akan menfilter data menggunakan foreach loop pada array $books sebagai parameter berdasarkan author 'Andy Weir'
+function filterByAuthor($books){
+    $filtered = [];
+    foreach ($books as $book) {
+        if ($book['author'] === 'Andy Weir') {
+            $filtered[] = $book;
+        }
+    }
+    return $filtered;//Array yang sudah difilter akan dikembalikan ke dalam function
+}
+//Untuk menampilkan hasil dari function filterByAuthor, kita bisa menggunakan perulangan foreach lagi
+<ul>
+  <?php foreach (filterByAuthor($books) as $book) :?>
+    <li>
+      <a href="<?= $book['purchase_url'] ?>">
+        <?= $book['name'] ?> (<?= $book['realiseYear'] ?>) - By <?= $book['author'] ?>
+      </a>
+    </li>
+  <?php endforeach; ?>
+```
+#### Jika diamati lebih lanjut, function di atas masih memerlukan perubahan lagi. Karena apabila kita ingin menampilkan 'author' yang berbeda, kita harus merubah nama 'author' di dalam function. Sehingga kita bisa membuat function yang lebih dinamis dengan menggunakan parameter baru.
+```php
+// Membuat parameter baru $author untuk menampung nilai 'author' yang akan difilter
+function filterByAuthor($books, $author){
+    $filtered = [];
+    foreach ($books as $book) {
+        if ($book['author'] === $author) {
+            $filtered[] = $book;
+        }
+    }
+    return $filtered;
+}
+<ul>
+  <?php foreach (filterByAuthor($books, 'Andy Weir') as $book) :?>
+    <li>
+      <a href="<?= $book['purchase_url'] ?>">
+        <?= $book['name'] ?> (<?= $book['realiseYear'] ?>) - By <?= $book['author'] ?>
+      </a>
+    </li>
+  <?php endforeach; ?>
+</ul>
+```
 ### 9. Lambda Functions
 ### 10. Separate PHP Logic From the Template
 ### 11. Technical Check-In
