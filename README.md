@@ -388,7 +388,64 @@ $filteredBooks = array_filter($books, function ($book) {
 </ul>
 ```
 ### 10. Separate PHP Logic From the Template
-#### 
+#### Dalam pengembangan website, seringkali logika PHP dan template HTML digabung menjadi satu file. Namun, hal ini kurang efektif karena sulit untuk mengelola kode program dan tampilan secara terpisah. Template adalah file HTML yang berisi tampilan halaman website, sedangkan logika PHP adalah kode program yang menghasilkan output untuk ditampilkan di halaman website. Oleh karena itu, dapat dilakukan dengan membuat file PHP terpisah yang berisi kode program untuk menghasilkan output dan mengambil data dari database, dan kemudian memanggil file template HTML untuk menampilkan tampilan website.
+#### Contoh :
+```php
+// File index.php
+<?php 
+    $books = [
+        [
+            'name'          => "Do Andorids Dream of Electric Sheep",
+            'author'        => "Philip K. Dick",
+            'realiseYear'   => 1968,
+            'purchase_url'  => "http://example.com"
+        ],
+        [
+            'name'          => "Project Hail Mary",
+            'author'        => "Andy Weir",
+            'realiseYear'   => 2021,
+            'purchase_url'  => "http://example.com"
+        ],
+        [
+            'name'          => "The Martisan",
+            'author'        => "Andy Weir",
+            'realiseYear'   => 2011,
+            'purchase_url'  => "http://example.com"
+        ]
+        ];
+
+    $filteredBooks = array_filter($books, function($book){
+        return $book['realiseYear'] >= 1950 && $book['realiseYear'] <= 2000;
+});
+
+require "index.view.php";// Memanggil file template HTML untuk menampilkan tampilan website
+```
+// File index.view.php
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+<body>
+    <ul>
+        <?php foreach ($filteredBooks as $book) : ?>
+            <li>
+                <a href="<?= $book['purchase_url'] ?>">
+                    <?= $book['name']; ?> (<?= $book['realiseYear'] ?>) - By <?= $book['author'] ?>
+                </a>
+            </li>
+        <?php endforeach; ?> 
+    </ul>
+</body>
+</html>
+```
+#### Hasi dari kode program diatas adalah :
+![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/separatePhp.PNG);
+#### Pemisahan logika disini memudahkan kita sebagai pengembang web dalam mengatur perubahan yang diperlukan dalam pembuatan website kita, jika kita perlu untuk merubah logika PHP yang sudah ada kita hanya perlu membuka file ```index.php``` tanpa perlu mengutabh file template HTML yang ada. Sebaliknya, jika kita ingin merubah tampilan website kita hanya perlu membuka file template HTML tanpa perlu mengubah file ```index.php```.
 ### 11. Technical Check-In
 ### 12. Page Links
 ### 13. Partials
