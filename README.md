@@ -519,11 +519,11 @@ require "contact.view.php";
 ```
 #### Hasil dari kode program diatas adalah :
 // Halaman Home
-![image]()
+![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/12.2.PNG);
 // Halaman About
-![image]()
+![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/12.3_about.PNG);
 // Halaman Contact
-![image]()
+![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/12.4_contact.PNG);
 ### 13. Partials
 ### 14. Superglobals and Current Page Styling
 ### 15. Make a PHP Router
