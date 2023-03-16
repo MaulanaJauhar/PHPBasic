@@ -525,6 +525,7 @@ require "contact.view.php";
 // Halaman Contact
 ![image](https://github.com/MaulanaJauhar/PHPBasic/blob/master/img/12.4_contact.PNG);
 ### 13. Partials
+#### Dengan menggunakan 
 ### 14. Superglobals and Current Page Styling
 ### 15. Make a PHP Router
 ### 16. Create a MySql Database
