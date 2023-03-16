@@ -448,6 +448,82 @@ require "index.view.php";// Memanggil file template HTML untuk menampilkan tampi
 #### Pemisahan logika disini memudahkan kita sebagai pengembang web dalam mengatur perubahan yang diperlukan dalam pembuatan website kita, jika kita perlu untuk merubah logika PHP yang sudah ada kita hanya perlu membuka file ```index.php``` tanpa perlu mengutabh file template HTML yang ada. Sebaliknya, jika kita ingin merubah tampilan website kita hanya perlu membuka file template HTML tanpa perlu mengubah file ```index.php```.
 ### 11. Technical Check-In
 ### 12. Page Links
+##### Ketika kita membuat sebuah website, kita seringkali ingin membuat link untuk menuju ke halaman lain. Contoh :
+// mengubah file index.php
+```php
+<?php
+  require "index.view.php";
+```
+// Mengubah isi file index.view.php
+```php
+<div class="hidden md:block">
+    <div class="ml-10 flex items-baseline space-x-4">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="/" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+        <a href="/about.php" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+        <a href="/contact.php" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+    </div>
+</div>
+```
+#### Membuat file ```about.php``` dan ```contact.php```.
+// Membuat file about.php
+```php
+<?php
+require "about.view.php";
+```
+// Membuat file contact.php
+```php
+<?php
+require "contact.view.php";
+```
+#### Membuat file ```about.view.php``` dan ```contact.view.php``` untuk menampilkan tampilan halaman ```about``` dan ```contact```. Isi dari file ```about.view.php``` dan ```contact.view.php``` sama dengan file ```index.view.php```. Perbedaannya adalah pada bagian yang menunjukkan bahwa sedang membuka halaman ```about``` atau ```contact``` dan juga isi dari halaman yang ditampilkan
+#### File about.view.php
+// Isi file about.view.php
+```php
+<div class="hidden md:block">
+    <div class="ml-10 flex items-baseline space-x-4">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="/" class="hover:bg-gray-700 text-gray-300 rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+        <a href="/about.php" class="text-white bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+        <a href="/contact.php" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+    </div>
+</div>
+```
+// Isi content
+```php
+<main>
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <p>Hello. Welcome to the About Page</p>
+    </div>
+  </main>
+```
+#### File contact.view.php
+// Isi file contact.view.php
+```php
+<div class="hidden md:block">
+    <div class="ml-10 flex items-baseline space-x-4">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="/" class="hover:bg-gray-700 text-gray-300 rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+        <a href="/about.php" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+        <a href="/contact.php" class="text-white bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+    </div>
+</div>
+```
+// Isi content
+```php
+<main>
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <p>Contact Us</p>
+    </div>
+  </main>
+```
+#### Hasil dari kode program diatas adalah :
+// Halaman Home
+![image]()
+// Halaman About
+![image]()
+// Halaman Contact
+![image]()
 ### 13. Partials
 ### 14. Superglobals and Current Page Styling
 ### 15. Make a PHP Router
